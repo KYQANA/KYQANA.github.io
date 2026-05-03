@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AITHORN WORLD</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      background: black;
+      color: white;
+      position: relative;
+    }
+
+    .background {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top, rgba(80,120,255,0.25), transparent 40%),
+        radial-gradient(circle at bottom, rgba(120,0,255,0.2), transparent 40%),
+        linear-gradient(to bottom, #050816, #000000);
+      z-index: -3;
+    }
+
+    .stars {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(rgba(255,255,255,0.7) 1px, transparent 1px);
+      background-size: 80px 80px, 120px 120px;
+      background-position: 0 0, 40px 60px;
+      animation: moveStars 80s linear infinite;
+      opacity: 0.7;
+      z-index: -2;
+    }
+
+    @keyframes moveStars {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-500px);
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: -1;
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 5rem;
+      letter-spacing: 10px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 25px rgba(120,160,255,0.8);
+      animation: fadeIn 2s ease;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 40px;
+      max-width: 800px;
+      line-height: 1.7;
+      animation: fadeIn 3s ease;
+    }
+
+    .enter-btn {
+      padding: 16px 42px;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      color: white;
+      font-size: 1rem;
+      letter-spacing: 3px;
+      cursor: pointer;
+      transition: all 0.35s ease;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 4s ease;
+    }
+
+    .enter-btn:hover {
+      transform: translateY(-4px) scale(1.03);
+      background: rgba(120,160,255,0.2);
+      box-shadow: 0 0 30px rgba(120,160,255,0.6);
+    }
+
+    .bottom-text {
+      position: absolute;
+      bottom: 28px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 2px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .title {
+        font-size: 2.8rem;
+        letter-spacing: 5px;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="stars"></div>
+  <div class="overlay"></div>
+
+  <div class="container">
+    <h1 class="title">AITHORN WORLD</h1>
+
+    <p class="subtitle">
+      In the age of fractured nations and awakening arcane systems,
+      humanity stands between celestial truth and abyssal collapse.
+    </p>
+
+    <button class="enter-btn" onclick="enterWorld()">
+      ENTER WORLD
+    </button>
+  </div>
+
+  <div class="bottom-text">
+    PROJECT INITIATED • ARCANE ERA
+  </div>
+
+  <script>
+    function enterWorld() {
+      alert('Welcome to AITHORN WORLD ✨');
+    }
+  </script>
+</body>
+</html>
